@@ -23,12 +23,14 @@ public class HelloSender {
 	private void sendMessage() {
 		// TODO Auto-generated method stub
 		log.trace("Sending a message");
+		System.out.println("Sending a message");
 
 		HelloWorldMessage message = HelloWorldMessage.builder().id(UUID.randomUUID()).message("Hello Smart World").build();
 
 		jmsTemplate.convertAndSend(JmsConfig.MY_QUEUE, message);
 
 		log.trace("Message sent.");
+		System.out.println("Message sent");
 	}
 
 
